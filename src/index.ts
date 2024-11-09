@@ -19,24 +19,9 @@ import { Products } from './resources/products/products';
 
 export interface ClientOptions {
   /**
-   * The client ID for OAuth2 authentication
+   * OAuth 2.0 access token for authentication
    */
-  clientId?: string | null | undefined;
-
-  /**
-   * The client secret for OAuth2 authentication
-   */
-  clientSecret?: string | null | undefined;
-
-  /**
-   * The token obtained for OAuth2 authentication
-   */
-  accessToken?: string | null | undefined;
-
-  /**
-   * The redirect URI used in the OAuth2 flow
-   */
-  redirectUri?: string | null | undefined;
+  accessToken?: string | undefined;
 
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
@@ -99,20 +84,14 @@ export interface ClientOptions {
  * API Client for interfacing with the Gumroad API.
  */
 export class Gumroad extends Core.APIClient {
-  clientId: string | null;
-  clientSecret: string | null;
-  accessToken: string | null;
-  redirectUri: string | null;
+  accessToken: string;
 
   private _options: ClientOptions;
 
   /**
    * API Client for interfacing with the Gumroad API.
    *
-   * @param {string | null | undefined} [opts.clientId=process.env['OAUTH_CLIENT_ID'] ?? null]
-   * @param {string | null | undefined} [opts.clientSecret=process.env['OAUTH_CLIENT_SECRET'] ?? null]
-   * @param {string | null | undefined} [opts.accessToken=process.env['OAUTH_ACCESS_TOKEN'] ?? null]
-   * @param {string | null | undefined} [opts.redirectUri=process.env['OAUTH_REDIRECT_URI'] ?? null]
+   * @param {string | undefined} [opts.accessToken=process.env['OAUTH2_ACCESS_TOKEN'] ?? undefined]
    * @param {string} [opts.baseURL=process.env['GUMROAD_BASE_URL'] ?? https://api.gumroad.com/v2] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {number} [opts.httpAgent] - An HTTP agent used to manage HTTP(s) connections.
@@ -123,17 +102,17 @@ export class Gumroad extends Core.APIClient {
    */
   constructor({
     baseURL = Core.readEnv('GUMROAD_BASE_URL'),
-    clientId = Core.readEnv('OAUTH_CLIENT_ID') ?? null,
-    clientSecret = Core.readEnv('OAUTH_CLIENT_SECRET') ?? null,
-    accessToken = Core.readEnv('OAUTH_ACCESS_TOKEN') ?? null,
-    redirectUri = Core.readEnv('OAUTH_REDIRECT_URI') ?? null,
+    accessToken = Core.readEnv('OAUTH2_ACCESS_TOKEN'),
     ...opts
   }: ClientOptions = {}) {
+    if (accessToken === undefined) {
+      throw new Errors.GumroadError(
+        "The OAUTH2_ACCESS_TOKEN environment variable is missing or empty; either provide it, or instantiate the Gumroad client with an accessToken option, like new Gumroad({ accessToken: 'My Access Token' }).",
+      );
+    }
+
     const options: ClientOptions = {
-      clientId,
-      clientSecret,
       accessToken,
-      redirectUri,
       ...opts,
       baseURL: baseURL || `https://api.gumroad.com/v2`,
     };
@@ -148,10 +127,7 @@ export class Gumroad extends Core.APIClient {
 
     this._options = options;
 
-    this.clientId = clientId;
-    this.clientSecret = clientSecret;
     this.accessToken = accessToken;
-    this.redirectUri = redirectUri;
   }
 
   products: API.Products = new API.Products(this);
