@@ -4,7 +4,7 @@ import { APIResource } from '../resource';
 import * as Core from '../core';
 import { type Response } from '../_shims/index';
 
-export class Users extends APIResource {
+export class User extends APIResource {
   /**
    * Retrieve the user's data.
    */

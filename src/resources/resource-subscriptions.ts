@@ -6,13 +6,6 @@ import { type Response } from '../_shims/index';
 
 export class ResourceSubscriptions extends APIResource {
   /**
-   * Show all active subscriptions of user for the input resource.
-   */
-  list(query: ResourceSubscriptionListParams, options?: Core.RequestOptions): Core.APIPromise<Response> {
-    return this._client.get('/resource_subscriptions', { query, ...options, __binaryResponse: true });
-  }
-
-  /**
    * Subscribe to a resource. Currently there are 5 supported resource names -
    * "sale", "refund", "dispute", "dispute_won", and "cancellation". sale - When
    * subscribed to this resource, you will be notified of the user's sales with an
@@ -42,14 +35,21 @@ export class ResourceSubscriptions extends APIResource {
    * cancelled_due_to_payment_failures: true if subscription was been cancelled
    * automatically because of payment failure, otherwise not present
    */
-  subscribe(options?: Core.RequestOptions): Core.APIPromise<Response> {
+  update(options?: Core.RequestOptions): Core.APIPromise<Response> {
     return this._client.put('/resource_subscriptions', { ...options, __binaryResponse: true });
+  }
+
+  /**
+   * Show all active subscriptions of user for the input resource.
+   */
+  list(query: ResourceSubscriptionListParams, options?: Core.RequestOptions): Core.APIPromise<Response> {
+    return this._client.get('/resource_subscriptions', { query, ...options, __binaryResponse: true });
   }
 
   /**
    * Unsubscribe from a resource.
    */
-  unsubscribe(resourceSubscriptionId: string, options?: Core.RequestOptions): Core.APIPromise<Response> {
+  delete(resourceSubscriptionId: string, options?: Core.RequestOptions): Core.APIPromise<Response> {
     return this._client.delete(`/resource_subscriptions/${resourceSubscriptionId}`, {
       ...options,
       __binaryResponse: true,
