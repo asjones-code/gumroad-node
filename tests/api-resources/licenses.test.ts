@@ -3,6 +3,8 @@
 import Gumroad from 'gumroad';
 
 const client = new Gumroad({
+  clientId: 'My Client ID',
+  clientSecret: 'My Client Secret',
   accessToken: 'My Access Token',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });

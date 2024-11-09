@@ -53,19 +53,19 @@ Methods:
 
 - <code title="get /products/{product_id}/subscribers">client.products.subscribers.<a href="./src/resources/products/subscribers.ts">list</a>(productId, { ...params }) -> Response</code>
 
-# Users
+# User
 
 Methods:
 
-- <code title="get /user">client.users.<a href="./src/resources/users.ts">retrieve</a>() -> Response</code>
+- <code title="get /user">client.user.<a href="./src/resources/user.ts">retrieve</a>() -> Response</code>
 
 # ResourceSubscriptions
 
 Methods:
 
+- <code title="put /resource_subscriptions">client.resourceSubscriptions.<a href="./src/resources/resource-subscriptions.ts">update</a>() -> Response</code>
 - <code title="get /resource_subscriptions">client.resourceSubscriptions.<a href="./src/resources/resource-subscriptions.ts">list</a>({ ...params }) -> Response</code>
-- <code title="put /resource_subscriptions">client.resourceSubscriptions.<a href="./src/resources/resource-subscriptions.ts">subscribe</a>() -> Response</code>
-- <code title="delete /resource_subscriptions/{resource_subscription_id}">client.resourceSubscriptions.<a href="./src/resources/resource-subscriptions.ts">unsubscribe</a>(resourceSubscriptionId) -> Response</code>
+- <code title="delete /resource_subscriptions/{resource_subscription_id}">client.resourceSubscriptions.<a href="./src/resources/resource-subscriptions.ts">delete</a>(resourceSubscriptionId) -> Response</code>
 
 # Sales
 

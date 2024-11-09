@@ -10,4 +10,4 @@ export { Products } from './products/products';
 export { ResourceSubscriptions, type ResourceSubscriptionListParams } from './resource-subscriptions';
 export { Sales, type SaleListParams, type SaleMarkAsShippedParams, type SaleRefundParams } from './sales';
 export { Subscribers } from './subscribers';
-export { Users } from './users';
+export { User } from './user';
