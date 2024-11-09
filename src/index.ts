@@ -19,19 +19,24 @@ import { Products } from './resources/products/products';
 
 export interface ClientOptions {
   /**
-   * The client ID for OAuth2 authentication to identify the application
+   * The client ID for OAuth2 authentication
    */
   clientId?: string | undefined;
 
   /**
-   * The client secret for OAuth2 authentication as a part of client credentials
+   * The client secret for OAuth2 authentication
    */
   clientSecret?: string | undefined;
 
   /**
-   * The access token for OAuth2 authentication to access protected resources
+   * The token obtained for OAuth2 authentication
    */
   accessToken?: string | undefined;
+
+  /**
+   * The redirect URI used in the OAuth2 flow
+   */
+  redirectUri?: string | null | undefined;
 
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
@@ -97,6 +102,7 @@ export class Gumroad extends Core.APIClient {
   clientId: string;
   clientSecret: string;
   accessToken: string;
+  redirectUri: string | null;
 
   private _options: ClientOptions;
 
@@ -106,6 +112,7 @@ export class Gumroad extends Core.APIClient {
    * @param {string | undefined} [opts.clientId=process.env['OAUTH_CLIENT_ID'] ?? undefined]
    * @param {string | undefined} [opts.clientSecret=process.env['OAUTH_CLIENT_SECRET'] ?? undefined]
    * @param {string | undefined} [opts.accessToken=process.env['OAUTH_ACCESS_TOKEN'] ?? undefined]
+   * @param {string | null | undefined} [opts.redirectUri=process.env['OAUTH_REDIRECT_URI'] ?? null]
    * @param {string} [opts.baseURL=process.env['GUMROAD_BASE_URL'] ?? https://api.gumroad.com/v2] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {number} [opts.httpAgent] - An HTTP agent used to manage HTTP(s) connections.
@@ -119,6 +126,7 @@ export class Gumroad extends Core.APIClient {
     clientId = Core.readEnv('OAUTH_CLIENT_ID'),
     clientSecret = Core.readEnv('OAUTH_CLIENT_SECRET'),
     accessToken = Core.readEnv('OAUTH_ACCESS_TOKEN'),
+    redirectUri = Core.readEnv('OAUTH_REDIRECT_URI') ?? null,
     ...opts
   }: ClientOptions = {}) {
     if (clientId === undefined) {
@@ -141,6 +149,7 @@ export class Gumroad extends Core.APIClient {
       clientId,
       clientSecret,
       accessToken,
+      redirectUri,
       ...opts,
       baseURL: baseURL || `https://api.gumroad.com/v2`,
     };
@@ -158,6 +167,7 @@ export class Gumroad extends Core.APIClient {
     this.clientId = clientId;
     this.clientSecret = clientSecret;
     this.accessToken = accessToken;
+    this.redirectUri = redirectUri;
   }
 
   products: API.Products = new API.Products(this);
