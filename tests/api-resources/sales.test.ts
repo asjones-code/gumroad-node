@@ -2,7 +2,10 @@
 
 import Gumroad from 'gumroad';
 
-const client = new Gumroad({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010' });
+const client = new Gumroad({
+  accessToken: 'My Access Token',
+  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
+});
 
 describe('resource sales', () => {
   test('retrieve: request options instead of params are passed correctly', async () => {
