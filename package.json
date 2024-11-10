@@ -1,12 +1,12 @@
 {
-  "name": "gumroad",
-  "version": "0.0.1-alpha.0",
+  "name": "gumroad-stainless",
+  "version": "1.0.1",
   "description": "The official TypeScript library for the Gumroad API",
   "author": "Gumroad <dev-feedback@gumroad.com>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "type": "commonjs",
-  "repository": "github:stainless-sdks/gumroad-node",
+  "repository": "github:asjones-code/gumroad-node",
   "license": "Apache-2.0",
   "packageManager": "yarn@1.22.22",
   "files": [
@@ -61,8 +61,8 @@
     "./shims/web.mjs"
   ],
   "imports": {
-    "gumroad": ".",
-    "gumroad/*": "./src/*"
+    "gumroad-stainless": ".",
+    "gumroad-stainless/*": "./src/*"
   },
   "exports": {
     "./_shims/auto/*": {

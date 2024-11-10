@@ -7,9 +7,9 @@ const config: JestConfigWithTsJest = {
     '^.+\\.(t|j)sx?$': ['@swc/jest', { sourceMaps: 'inline' }],
   },
   moduleNameMapper: {
-    '^gumroad$': '<rootDir>/src/index.ts',
-    '^gumroad/_shims/auto/(.*)$': '<rootDir>/src/_shims/auto/$1-node',
-    '^gumroad/(.*)$': '<rootDir>/src/$1',
+    '^gumroad-stainless$': '<rootDir>/src/index.ts',
+    '^gumroad-stainless/_shims/auto/(.*)$': '<rootDir>/src/_shims/auto/$1-node',
+    '^gumroad-stainless/(.*)$': '<rootDir>/src/$1',
   },
   modulePathIgnorePatterns: [
     '<rootDir>/ecosystem-tests/',
