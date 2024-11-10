@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.0 (2024-11-10)
+
+Full Changelog: [v1.0.1...v1.1.0](https://github.com/asjones-code/gumroad-node/compare/v1.0.1...v1.1.0)
+
+### Features
+
+* proof of concept ([8c6e342](https://github.com/asjones-code/gumroad-node/commit/8c6e3424e115c2618231f0ce874527dfa8f41c27))
+* proof of concept no env ([d521543](https://github.com/asjones-code/gumroad-node/commit/d5215430e0337306b958e08f4b7d51d11841ee7f))
+* proof of concept no env ([67612fe](https://github.com/asjones-code/gumroad-node/commit/67612fecbf5002349264247dc7f325fc340da788))
+
 ## 1.0.1 (2024-11-10)
 
 Full Changelog: [v1.0.0...v1.0.1](https://github.com/asjones-code/gumroad-node/compare/v1.0.0...v1.0.1)
