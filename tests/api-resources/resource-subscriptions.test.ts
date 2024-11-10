@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Gumroad from 'gumroad';
+import Gumroad from 'gumroad-stainless';
 
 const client = new Gumroad({
   clientId: 'My Client ID',

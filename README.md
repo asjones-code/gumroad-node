@@ -1,6 +1,6 @@
 # Gumroad Node API Library
 
-[![NPM version](https://img.shields.io/npm/v/gumroad.svg)](https://npmjs.org/package/gumroad) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/gumroad)
+[![NPM version](https://img.shields.io/npm/v/gumroad-stainless.svg)](https://npmjs.org/package/gumroad-stainless) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/gumroad-stainless)
 
 This library provides convenient access to the Gumroad REST API from server-side TypeScript or JavaScript.
 
@@ -11,7 +11,7 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 ## Installation
 
 ```sh
-npm install gumroad
+npm install gumroad-stainless
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import Gumroad from 'gumroad';
+import Gumroad from 'gumroad-stainless';
 
 const client = new Gumroad();
 
@@ -40,7 +40,7 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import Gumroad from 'gumroad';
+import Gumroad from 'gumroad-stainless';
 
 const client = new Gumroad();
 
@@ -213,11 +213,11 @@ add the following import before your first import `from "Gumroad"`:
 ```ts
 // Tell TypeScript and the package to use the global web fetch instead of node-fetch.
 // Note, despite the name, this does not add any polyfills, but expects them to be provided if needed.
-import 'gumroad/shims/web';
-import Gumroad from 'gumroad';
+import 'gumroad-stainless/shims/web';
+import Gumroad from 'gumroad-stainless';
 ```
 
-To do the inverse, add `import "gumroad/shims/node"` (which does import polyfills).
+To do the inverse, add `import "gumroad-stainless/shims/node"` (which does import polyfills).
 This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/asjones-code/gumroad-node/tree/main/src/_shims#readme)).
 
 ### Logging and middleware
@@ -227,7 +227,7 @@ which can be used to inspect or alter the `Request` or `Response` before/after e
 
 ```ts
 import { fetch } from 'undici'; // as one example
-import Gumroad from 'gumroad';
+import Gumroad from 'gumroad-stainless';
 
 const client = new Gumroad({
   fetch: async (url: RequestInfo, init?: RequestInit): Promise<Response> => {

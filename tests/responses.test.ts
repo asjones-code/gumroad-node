@@ -1,5 +1,5 @@
-import { createResponseHeaders } from 'gumroad/core';
-import { Headers } from 'gumroad/_shims/index';
+import { createResponseHeaders } from 'gumroad-stainless/core';
+import { Headers } from 'gumroad-stainless/_shims/index';
 
 describe('response parsing', () => {
   // TODO: test unicode characters

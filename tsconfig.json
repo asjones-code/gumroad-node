@@ -9,9 +9,9 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "gumroad/_shims/auto/*": ["src/_shims/auto/*-node"],
-      "gumroad/*": ["src/*"],
-      "gumroad": ["src/index.ts"]
+      "gumroad-stainless/_shims/auto/*": ["src/_shims/auto/*-node"],
+      "gumroad-stainless/*": ["src/*"],
+      "gumroad-stainless": ["src/index.ts"]
     },
     "noEmit": true,
 
