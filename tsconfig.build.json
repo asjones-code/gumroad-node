@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "gumroad/*": ["dist/src/*"],
-      "gumroad": ["dist/src/index.ts"],
+      "gumroad-stainless/*": ["dist/src/*"],
+      "gumroad-stainless": ["dist/src/index.ts"],
     },
     "noEmit": false,
     "declaration": true,

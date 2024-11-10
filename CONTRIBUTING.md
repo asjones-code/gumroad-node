@@ -55,12 +55,12 @@ $ cd gumroad-node
 # With yarn
 $ yarn link
 $ cd ../my-package
-$ yarn link gumroad
+$ yarn link gumroad-stainless
 
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global gumroad
+$ pnpm link -—global gumroad-stainless
 ```
 
 ## Running tests

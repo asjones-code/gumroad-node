@@ -4,8 +4,8 @@
 /**
  * Types will get added to this namespace when you import one of the following:
  *
- *   import 'gumroad/shims/node'
- *   import 'gumroad/shims/web'
+ *   import 'gumroad-stainless/shims/node'
+ *   import 'gumroad-stainless/shims/web'
  *
  * Importing more than one will cause type and runtime errors.
  */
