@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.1 (2024-11-10)
+
+Full Changelog: [v1.0.0...v1.0.1](https://github.com/asjones-code/gumroad-node/compare/v1.0.0...v1.0.1)
+
+### Chores
+
+* update SDK settings ([#5](https://github.com/asjones-code/gumroad-node/issues/5)) ([233880c](https://github.com/asjones-code/gumroad-node/commit/233880cc2482e813e4570783d728221bfbbd3240))
+
 ## 1.0.0 (2024-11-10)
 
 Full Changelog: [v0.0.1-alpha.0...v1.0.0](https://github.com/asjones-code/gumroad-node/compare/v0.0.1-alpha.0...v1.0.0)
