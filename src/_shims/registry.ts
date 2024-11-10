@@ -42,12 +42,12 @@ export let isFsReadStream: Shims['isFsReadStream'] | undefined = undefined;
 export function setShims(shims: Shims, options: { auto: boolean } = { auto: false }) {
   if (auto) {
     throw new Error(
-      `you must \`import 'gumroad/shims/${shims.kind}'\` before importing anything else from gumroad`,
+      `you must \`import 'gumroad-stainless/shims/${shims.kind}'\` before importing anything else from gumroad-stainless`,
     );
   }
   if (kind) {
     throw new Error(
-      `can't \`import 'gumroad/shims/${shims.kind}'\` after \`import 'gumroad/shims/${kind}'\``,
+      `can't \`import 'gumroad-stainless/shims/${shims.kind}'\` after \`import 'gumroad-stainless/shims/${kind}'\``,
     );
   }
   auto = options.auto;

@@ -1,6 +1,6 @@
 import fs from 'fs';
-import { toFile, type ResponseLike } from 'gumroad/uploads';
-import { File } from 'gumroad/_shims/index';
+import { toFile, type ResponseLike } from 'gumroad-stainless/uploads';
+import { File } from 'gumroad-stainless/_shims/index';
 
 class MyClass {
   name: string = 'foo';
