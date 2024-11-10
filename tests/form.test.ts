@@ -1,6 +1,6 @@
-import { multipartFormRequestOptions, createForm } from 'gumroad/core';
-import { Blob } from 'gumroad/_shims/index';
-import { toFile } from 'gumroad';
+import { multipartFormRequestOptions, createForm } from 'gumroad-stainless/core';
+import { Blob } from 'gumroad-stainless/_shims/index';
+import { toFile } from 'gumroad-stainless';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

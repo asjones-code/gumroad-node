@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Gumroad from 'gumroad';
-import { APIUserAbortError } from 'gumroad';
-import { Headers } from 'gumroad/core';
+import Gumroad from 'gumroad-stainless';
+import { APIUserAbortError } from 'gumroad-stainless';
+import { Headers } from 'gumroad-stainless/core';
 import defaultFetch, { Response, type RequestInit, type RequestInfo } from 'node-fetch';
 
 describe('instantiate client', () => {
