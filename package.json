@@ -1,6 +1,6 @@
 {
   "name": "gumroad-stainless",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "The official TypeScript library for the Gumroad API",
   "author": "Gumroad <dev-feedback@gumroad.com>",
   "types": "dist/index.d.ts",
