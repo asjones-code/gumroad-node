@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.1 (2024-11-12)
+
+Full Changelog: [v1.1.0...v1.1.1](https://github.com/asjones-code/gumroad-node/compare/v1.1.0...v1.1.1)
+
+### Chores
+
+* rebuild project due to codegen change ([#10](https://github.com/asjones-code/gumroad-node/issues/10)) ([22f2cbe](https://github.com/asjones-code/gumroad-node/commit/22f2cbe3a6aa397dbad3faa182eac32095d45a6d))
+
 ## 1.1.0 (2024-11-10)
 
 Full Changelog: [v1.0.1...v1.1.0](https://github.com/asjones-code/gumroad-node/compare/v1.0.1...v1.1.0)
