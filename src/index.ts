@@ -229,32 +229,12 @@ export class Gumroad extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-export {
-  GumroadError,
-  APIError,
-  APIConnectionError,
-  APIConnectionTimeoutError,
-  APIUserAbortError,
-  NotFoundError,
-  ConflictError,
-  RateLimitError,
-  BadRequestError,
-  AuthenticationError,
-  InternalServerError,
-  PermissionDeniedError,
-  UnprocessableEntityError,
-} from './error';
-
-export import toFile = Uploads.toFile;
-export import fileFromPath = Uploads.fileFromPath;
-
 Gumroad.Products = Products;
 Gumroad.User = User;
 Gumroad.ResourceSubscriptions = ResourceSubscriptions;
 Gumroad.Sales = Sales;
 Gumroad.Subscribers = Subscribers;
 Gumroad.Licenses = Licenses;
-
 export declare namespace Gumroad {
   export type RequestOptions = Core.RequestOptions;
 
@@ -283,5 +263,22 @@ export declare namespace Gumroad {
     type LicenseVerifyParams as LicenseVerifyParams,
   };
 }
+
+export { toFile, fileFromPath } from 'gumroad-stainless/uploads';
+export {
+  GumroadError,
+  APIError,
+  APIConnectionError,
+  APIConnectionTimeoutError,
+  APIUserAbortError,
+  NotFoundError,
+  ConflictError,
+  RateLimitError,
+  BadRequestError,
+  AuthenticationError,
+  InternalServerError,
+  PermissionDeniedError,
+  UnprocessableEntityError,
+} from 'gumroad-stainless/error';
 
 export default Gumroad;
