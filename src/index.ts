@@ -264,7 +264,7 @@ export declare namespace Gumroad {
   };
 }
 
-export { toFile, fileFromPath } from 'gumroad-stainless/uploads';
+export { toFile, fileFromPath } from './uploads';
 export {
   GumroadError,
   APIError,
@@ -279,6 +279,6 @@ export {
   InternalServerError,
   PermissionDeniedError,
   UnprocessableEntityError,
-} from 'gumroad-stainless/error';
+} from './error';
 
 export default Gumroad;
